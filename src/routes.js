@@ -94,7 +94,7 @@ const routes = [
     key: "tables",
     role: "01",
     icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/Danh-Sach-San-Pham",
+    route: "/list/products",
     component: <Tables />,
   },
   {
