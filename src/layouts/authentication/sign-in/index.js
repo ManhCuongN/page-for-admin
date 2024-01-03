@@ -60,7 +60,7 @@ function Basic() {
       setTimeout(() => {
         toast.success("Login successful");  
       }, 2000);
-    navigate("/Thong-Ke")
+    navigate("/")
      }  
   }
 
