@@ -65,7 +65,7 @@ const routes = [
     name: "Thống Kê",
     key: "Thống Kê",
     icon: <Icon fontSize="small">Thống Kê</Icon>,
-    route: "/Thong-Ke",
+    route: "/ThongKe",
     role: "01",
     component: <Dashboard />,
   },
@@ -75,7 +75,7 @@ const routes = [
     key: "creates",
     role: "01",
     icon: <Icon fontSize="small">dashboard</Icon>,
-    route: "/Tao/San-Pham-Moi",
+    route: "/TaoSanPham",
     component: <ModalCreate />,
   },
   {
@@ -84,7 +84,7 @@ const routes = [
     key: "discount",
     role: "01",
     icon: <Icon fontSize="small">Discount</Icon>,
-    route: "/create/discount",
+    route: "/CreateDiscount",
     component: <CreateDisCountComponent />,
    
   },
@@ -94,7 +94,7 @@ const routes = [
     key: "tables",
     role: "01",
     icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/list/products",
+    route: "/ListProducts",
     component: <Tables />,
   },
   {
@@ -103,7 +103,7 @@ const routes = [
     key: "billing",
     role: "01",
     icon: <Icon fontSize="small">receipt_long</Icon>,
-    route: "/Danh-Sach-Discount",
+    route: "/DanhSachDiscount",
     component: <Billing />,
   },
   {
@@ -121,7 +121,7 @@ const routes = [
     key: "notifications",
     role: "00",
     icon: <Icon fontSize="small">notifications</Icon>,
-    route: "/Nguoi-Dung",
+    route: "/NguoiDung",
     component: <Users />,
   },
   {
@@ -129,7 +129,7 @@ const routes = [
     name: "Hồ Sơ",
     key: "profile",
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/Ho-So",
+    route: "/HoSo",
     component: <Profile />,
   },
   {
@@ -137,7 +137,7 @@ const routes = [
     name: "Đăng Nhập",
     key: "sign-in",
     icon: <Icon fontSize="small">login</Icon>,
-    route: "/authentication/sign-in",
+    route: "/authentication/SignIn",
     component: <SignIn />,
   },
   
@@ -146,7 +146,7 @@ const routes = [
     name: "Quên Mật Khẩu",
     key: "ForGot",
     icon: <Icon fontSize="small">assignment</Icon>,
-    route: "/authentication/forget-pass",
+    route: "/authentication/ForgetPass",
     component: <Cover />,
   },
   {
@@ -155,7 +155,7 @@ const routes = [
     role: "00",
     key: "confirm-shop",
     icon: <Icon fontSize="small">assignment</Icon>,
-    route: "/confirm-shop",
+    route: "/confirmShop",
     component: <ConfirmShop />,
   },
   {
@@ -163,7 +163,7 @@ const routes = [
     name: "Danh Sách Đặt Hàng",
     key: "list-shop",
     icon: <Icon fontSize="small">assignment</Icon>,
-    route: "/Danh-Sach-Dat-Hang",
+    route: "/DanhSachDatHang",
     component: <ListOrdered />,
   },
 ];
