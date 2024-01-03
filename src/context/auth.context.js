@@ -164,8 +164,9 @@ const getAllUsers = async() => {
 };
 
 const deleteUser = async(data) => {
+  console.log("Data",data);
   try {
-    const response = await axios.delete(`${config.urlProductService}/user/delete`,{data});
+    const response = await axios.delete(`${config.urlUserService}/user/delete`,{data});
     await getAllUsers()
 } catch (error) {
  console.log("add", error);
