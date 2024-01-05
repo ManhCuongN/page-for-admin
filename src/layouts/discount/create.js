@@ -41,7 +41,8 @@ import { message, Upload } from 'antd';
 import { Button as Btn } from '@mui/material';
 import config from '../../config'
 import { io } from 'socket.io-client';
-
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 //antd
@@ -152,6 +153,10 @@ function CreateDiscountComponent() {
         
         
         const result = await createDiscountFunc(data)
+        if(result) {
+            toast.success("Created Discount Successfully")
+            setCreateDiscount("")
+        }
         const message = {
             name: data.name,
             code: data.code,
@@ -175,6 +180,7 @@ function CreateDiscountComponent() {
                                     onChange={hanldChangeValueCreate}
                                     fullWidth />
                             </MDBox>
+                            <ToastContainer />
                             <MDBox mb={2}>
                                 <MDInput type="text" label="Mô Tả"
                                     onChange={hanldChangeValueCreate}
