@@ -61,8 +61,8 @@ const { Search } = Input;
 
 function CreateDiscountComponent() {
 
-    const [valueStartDay, setValueStartDay] = useState(dayjs('2022-04-17'));
-    const [valueEndDay, setValueEndDay] = useState(dayjs('2022-04-17'));
+    const [valueStartDay, setValueStartDay] = useState(dayjs('2024-01-01'));
+    const [valueEndDay, setValueEndDay] = useState(dayjs('2024-01-01'));
 
     const [openStartDay, setOpenStartDay] = useState(false);
     const [openEndDay, setOpenEndDay] = useState(false);

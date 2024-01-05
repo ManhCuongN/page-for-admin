@@ -54,7 +54,7 @@ function BillingInformation({listDiscounts}) {
   };
   return (
     <Card id="delete-account">
-       <Modal title="Chỉnh Sửa Mã Giảm Gía" open={showModalEditDiscount} onOk={handleOk} onCancel={handleCancel}>
+       <Modal title="Chỉnh Sửa Mã Giảm Gía" open={showModalEditDiscount} onOk={handleOk} onCancel={handleCancel} width={1000}>
         <EditDiscountModal discount={discount} />
       </Modal>
       <MDBox pt={3} px={2}>
