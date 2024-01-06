@@ -90,10 +90,8 @@ const AuthContextProvider = ({children}) => {
     }
 
     const getListShop = async(payload) => {
-  
       try {
         const response = await axios.post(`${config.urlUserService}/admin/list/shop`, payload)
-        console.log("re",response.data);
         dispatch({
           type: "GET_LIST_SHOP",
           payload: response.data.metadata
@@ -112,7 +110,7 @@ const AuthContextProvider = ({children}) => {
 
   const forgetPass = async(data) => {
     try {
-      const response = await axios.post(`${config.urlProductService}/v1/api/forgot-password`,data);
+      const response = await axios.post(`http://localhost:3055/v1/api/forgot-password`,data);
       return response.data;
   } catch (error) {
      alert(error)
@@ -124,10 +122,10 @@ const AuthContextProvider = ({children}) => {
         await getListShop()
         return response.data
 };
-const userChats = async(id) => {
-  const id2 = "6516851253891feb771ff003"
+const userChats = async(userId) => {
+ console.log("id",userId);
   try {
-    const response = await axios.get(`${config.urlSysService}/chat/${id2}`);
+    const response = await axios.get(`${config.urlSysService}/chat/${userId}`);
     console.log("useChat", response.data);
     return response.data;
 } catch (error) {
@@ -155,6 +153,7 @@ const addMessages = async(data) => {
 
 const getAllUsers = async() => {
   try {
+    
     const response = await axios.get(`${config.urlUserService}/user/get/all/`);
     console.log(response.data);
     return response.data;
@@ -164,10 +163,14 @@ const getAllUsers = async() => {
 };
 
 const deleteUser = async(data) => {
-  console.log("Data",data);
   try {
     const response = await axios.delete(`${config.urlUserService}/user/delete`,{data});
-    await getAllUsers()
+
+
+    if(response) {
+      await getAllUsers()
+
+    }
 } catch (error) {
  console.log("add", error);
 }
