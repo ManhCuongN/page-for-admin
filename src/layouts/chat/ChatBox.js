@@ -86,7 +86,7 @@ const ChatBox = () => {
                 <div className="Chat-container">
                 <h2>Trò Chuyện</h2>
                 <div className="Chat-list">
-                   {chats.map((chat) => (
+                   {chats && chats?.map((chat) => (
                     <div onClick={() => setCurrentChat(chat)}>
                         <Conversation data={chat} currentUserId={user._id} />
                     </div>
