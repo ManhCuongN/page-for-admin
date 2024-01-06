@@ -111,7 +111,7 @@ const routes = [
     name: "Trò Chuyện",
     key: "rtl",
     icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
-    route: "/Chat",
+    route: "chat",
     role: "01",
     component: <ChatBox />,
   },

@@ -17,16 +17,17 @@ const ChatBox = () => {
 
 
     const shopId = localStorage.getItem("shopId")
+    console.log("shopId",shop);
     useEffect(() => {
 
         const getInfo = async() => {
             const result = await axios.get(`${config.urlProductService}/shop/getInfo/${shopId}`)
-           setUser( result.data.metadata)
-           setUserId(result.data.metadata._id)
+           await setUser( result.data.metadata)
+           await setUserId(result.data.metadata._id)
 
         }
         getInfo()
-    },[])
+    },[shopId])
    
     
 
@@ -50,19 +51,21 @@ const ChatBox = () => {
     
 
     useEffect(() => {
-        const getChats = async() => {
+        const getChats = async () => {
             try {
-                const data = await userChats(userId)
-                console.log("data",data);
-                setChats(data)
-                console.log(data);
+                console.log("userS", userId);
+                if (userId) {
+                    const data = await userChats(userId);
+                    console.log("data", data);
+                    setChats(data);
+                }
             } catch (error) {
-                console.log("errr",error);
+                console.log("errr", error);
             }
-        }
-        getChats()
-    }, [shop])
-
+        };
+        getChats();
+    }, [userId, userChats]);
+  
      //send mess to socker server
      useEffect(() => {
         if(sendMessage !== null) {
@@ -76,6 +79,7 @@ const ChatBox = () => {
             setReceiveMessage(data)
         })
      }, [])
+     console.log("cy",currentChat);
  
     return (
         <DashboardLayout>
@@ -86,7 +90,7 @@ const ChatBox = () => {
                 <div className="Chat-container">
                 <h2>Trò Chuyện</h2>
                 <div className="Chat-list">
-                   {chats && chats?.map((chat) => (
+                   {chats?.map((chat) => (
                     <div onClick={() => setCurrentChat(chat)}>
                         <Conversation data={chat} currentUserId={user._id} />
                     </div>
