@@ -72,7 +72,7 @@ const ListOrdered = () => {
               ]}
               extra={
                 <>
-                <div>
+                <div style={{width: '300px'}}>
                   {order.order_products.map((i) => (
                     i.item_products.map((d) => (
                       <div key={d.productId}>
